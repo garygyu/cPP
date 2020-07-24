@@ -20,3 +20,15 @@
 7   git checkout master
 8   git merge round-one
 9   git push // to save changes on git
+
+// to remove a file from repository
+    git rm file.txt
+    git commit -m "remove file.txt"
+    git push
+
+// to commit a folder
+    git add folderName
+    git commit -m "commit folder"
+    git push
+// to delete a local branch
+    git branch -d branch_name
