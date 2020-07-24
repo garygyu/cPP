@@ -48,10 +48,8 @@ int main(int argc, char* argv[])
 		}
 	}
 
-//	std::cout << "****" << std::endl;
-
-	swap_local(A, B);
-//	std::swap(A, B);
+//	swap_local(A, B);
+	std::swap(A, B);
 
 	for(auto i : A)
 	{
