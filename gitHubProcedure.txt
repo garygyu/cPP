@@ -1,0 +1,22 @@
+1   log on to github account
+2   create a new repository, cPP
+3   on linux terminal, 
+    git clone https:://github.com/garygyu/cPP.git
+4   cd cPP
+5   cp ../C++/. ./. //copy file to cPP folder
+6   git status
+7   git add *.cpp // add to track // git reset HEAD <file> ... to unstage
+8   git commit *.cpp -m "message"
+9   git push -u origin master // to save on gitHub
+        CREATING BRANCHES
+1   git branch round-one
+2   git checkout round-one
+3   git push -u origin round-one // to let git konw
+    // modify a file or create a new one
+4   git add <file>
+5   git commit <file> -m "message"
+6   git push // to update git
+    // if you are happy, merge with master
+7   git checkout master
+8   git merge round-one
+9   git push // to save changes on git
