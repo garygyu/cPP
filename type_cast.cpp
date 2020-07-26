@@ -101,9 +101,15 @@ public:
 	}
 };
 
+bool isSquare(Shape* pShape)
+{
+	Square* pSquare;
+	return (pSquare == dynamic_cast<Square*>(pShape)) ? true : false;
+}
+
 int main(int argc, char* argv[])
 {
-	Circle circle(10);
+	/*Circle circle(10);
 	if (isA<Shape>(circle)) //if (isA<Shape, Circle>(circle))
 	{
 		Shape* shape = &circle;
@@ -112,14 +118,31 @@ int main(int argc, char* argv[])
 	else
 	{
 		cout << "Nothing converted!" << endl;
-	}
+	}*/
 
-	Rect rect(10, 2);
-	cout << "shape area = " << rect.calcArea() << endl;
+	//Rect rect(10, 2);
+	//cout << "shape area = " << rect.calcArea() << endl;
 
-	Square square(5);
+	/*Square square(5);
 	cout << "shape area = " << square.calcArea() << endl;
 	cout << "shape area = " << refCast<Rect>(square).calcArea() << endl;
+	cout << "shape area = " << dynamic_cast<Rect*>(&square)->calcArea() << endl;
+
+	Square* pSquare = new Square(6);
+	Rect* pRect = new Rect();
+	pRect = dynamic_cast<Rect*>(pSquare);
+	cout << "area = " << pSquare->calcArea() << endl;
+	cout << "area = " << pRect->calcArea() << endl;
+
+	pRect = new Square(8);
+	pSquare = dynamic_cast<Square*>(pRect);
+
+	cout << "area = " << pSquare->calcArea() << endl;
+	cout << "area = " << pRect->calcArea() << endl;*/
+
+	Shape* pBase = new Rect(3,8); //new Square(8);
+	if (isSquare(pBase)) cout << "is a Square\n";
+	else cout << "not a square\n";
 
 	return 0;
 }

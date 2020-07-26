@@ -2,25 +2,26 @@
 #include <vector>
 #include <array>
 using namespace std;
-/*
-template <class T, int rows, int cols>
+
+template <class T>
 class Matrix
 {
 private:
+	int rows_, cols_;
 	std::vector<std::vector<T>> matrix;
 	
 public:
-	Matrix();
+	Matrix(int, int);
 	// vector.at() check bounds, operator[] does not
 	std::vector<T>& operator[](int i) {return matrix.at(i);}
 	//const std::vector<T>& operator[](int i) const {return matrix[i];}
 };
 
-template<class T, int rows, int cols>
-Matrix<T, rows, cols>::Matrix()
+template<class T>
+Matrix<T>::Matrix(int rows, int cols) : rows_(rows), cols_(cols)
 {
 	matrix = 
-	std::vector<std::vector<T>>(rows, std::vector<T>(cols));
+	std::vector<std::vector<T>>(rows_, std::vector<T>(cols_));
 
 	for(auto& i : matrix)
 	{
@@ -29,7 +30,7 @@ Matrix<T, rows, cols>::Matrix()
 			j = static_cast<T>(0);
 		}
 	}
-}*/
+}
 /*
 template <class T, int rows, int cols>
 class Matrix
@@ -57,7 +58,7 @@ Matrix<T, rows, cols>::Matrix()
 }
 */
 
-template <class T, int rows, int cols>
+/*template <class T, int rows, int cols>
 class Matrix
 {
 private:
@@ -78,14 +79,14 @@ Matrix<T, rows, cols>::Matrix()
 			matrix[i].push_back(0);
 		} 
 	}
-}
+}*/
 
 int main()
 {
-	const int rows = 4;
-	const int cols = 4;
+	int rows = 3;
+	int cols = 3;
 
-	Matrix<int, rows, cols> matrix;
+	Matrix<int> matrix(rows, cols);
 	
 	/*for(auto i=0; i <rows; i++)
 	{	

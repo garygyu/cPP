@@ -38,44 +38,6 @@ struct isTypeOp
 	}
 };
 
-class Shape
-{
-protected:
-
-public:
-	virtual double calcArea() = 0;
-};
-
-class Circle : public Shape
-{
-private:
-	double radius;
-	
-public:
-	Circle() : radius(0){};
-	Circle(double r) : Shape(), radius(r){};
-
-	double calcArea()
-	{
-		return 3.14*radius*radius;
-	}
-};
-
-class Square : public Shape
-{
-private:
-	double length;
-
-public:
-	Square() : length(0){};
-	Square(double len) : Shape(), length(len){};
-
-	double calcArea()
-	{
-		return length*length;
-	}
-};
-
 // only one operator is defined in the class
 class MultiplyBy
 {
